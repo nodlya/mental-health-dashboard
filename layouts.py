@@ -1,11 +1,6 @@
 from dash import html, dcc
 from data import mental_df
-import plotly.express as px 
-from data import countries
-from data import pie
-
-countries_fig = px.bar(countries, x=countries.index, y='Count')
-pie_fig = px.pie(pie, values='Count', names=pie.index)
+from plotly_graphs import countries_fig, pie_fig
 
 general_layout = html.Div([
     html.H2(children='Количество людей по странам', style={'textAlign':'center'}),
