@@ -3,6 +3,16 @@ from data import mental_df
 from plotly_graphs import countries_fig, pie_fig
 
 general_layout = html.Div([
+    
+    dcc.Dropdown(mental_df.Timestamp.unique(), mental_df.Timestamp.unique()[0], id='dropdown1'),
+    
+    html.H2(children='Количество респондентов за день', style={'textAlign':'center'}),
+    dcc.Graph(id='indicator1'),
+    html.H2(children='% людей долго находящихся дома на указанный день', style={'textAlign':'center'}),
+    dcc.Graph(id='indicator2'),
+    html.H2(children='% людей, получающих лечение на указанный день', style={'textAlign':'center'}),
+    dcc.Graph(id='indicator3'),
+    
     html.H2(children='Количество людей по странам', style={'textAlign':'center'}),
     dcc.Graph(id='graph-countries', figure=countries_fig),
     
